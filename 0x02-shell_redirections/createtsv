@@ -1,0 +1,20 @@
+#!/bin/bash
+
+foo="72.9%"
+bar="27.1%"
+baz="Y"
+buz="8756"
+
+declare -a value
+
+value=( "$foo" "$bar" "$baz" "$buz" )
+
+for ((i = 0; i < ${#value[@]}; i++)); do
+    printf "%s\t" "variable$((i+1))"
+done
+echo
+
+for i in "${value[@]}"; do
+    printf "%s\t\t" "$i"
+done
+echo
